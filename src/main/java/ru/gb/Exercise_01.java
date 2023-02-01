@@ -18,17 +18,20 @@ public class Exercise_01 extends Exercise {
         System.out.println("Исходный список:");
         System.out.println(list);
 
-        reverseList(list);
+        
 
         System.out.println("Перевёрнутый список:");
-        System.out.println(list);
+        System.out.println(reverseList(list));
     }
 
-    public void reverseList(LinkedList<Integer> list) {
-        for (int i = 0; i < list.size() / 2; i++) {
-            int tmp = list.get(i);
-            list.set(i, list.get(list.size() - 1 - i));
-            list.set(list.size() - 1 - i, tmp);
+    public LinkedList<Integer> reverseList(LinkedList<Integer> list) {
+        LinkedList<Integer> retList = (LinkedList) list.clone();
+
+        for (int i = 0; i < retList.size() / 2; i++) {
+            int tmp = retList.get(i);
+            retList.set(i, retList.get(retList.size() - 1 - i));
+            retList.set(retList.size() - 1 - i, tmp);
         }
+        return retList;
     }
 }
