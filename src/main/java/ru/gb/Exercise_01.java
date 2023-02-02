@@ -18,8 +18,6 @@ public class Exercise_01 extends Exercise {
         System.out.println("Исходный список:");
         System.out.println(list);
 
-        
-
         System.out.println("Перевёрнутый список:");
         System.out.println(reverseList(list));
     }
